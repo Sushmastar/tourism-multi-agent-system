@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Agent Tourism System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌍 Multi-Agent Tourism System</h1>
+            <p class="subtitle">Get weather and tourist attractions for any location worldwide</p>
+        </header>
+
+        <div class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <p>Welcome! I can help you plan your trip. Ask me about:</p>
+                        <ul>
+                            <li>Weather in any location</li>
+                            <li>Tourist attractions in any city</li>
+                            <li>Both weather and places together</li>
+                        </ul>
+                        <p><strong>Examples:</strong></p>
+                        <p class="example">"I'm going to go to Bangalore, let's plan my trip."</p>
+                        <p class="example">"What's the temperature in New York?"</p>
+                        <p class="example">"Dubai, what is the temperature there? And what are the places I can visit?"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <form id="queryForm">
+                    <input 
+                        type="text" 
+                        id="userInput" 
+                        placeholder="Enter your query (e.g., 'I'm going to Bangalore, let's plan my trip')"
+                        autocomplete="off"
+                    >
+                    <button type="submit" id="submitBtn">
+                        <span>Send</span>
+                        <span class="loading" id="loadingSpinner" style="display: none;">⏳</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
